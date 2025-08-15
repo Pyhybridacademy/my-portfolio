@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/my-portfolio',
+  basePath: process.env.NODE_ENV === 'production' && process.env.GITHUB_ACTIONS ? '/my-portfolio' : '',
   trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
